@@ -211,7 +211,6 @@ nav li:hover {
     opacity: 0%;
 }
 
-
 #menu-toggle input:checked + label {
     align-items: center;
     text-align: center;
@@ -227,7 +226,6 @@ nav li:hover {
 
 
 
-
 /* --- INTRO --- */
 #intro img {
     width: 100%;
@@ -237,7 +235,6 @@ nav li:hover {
 #intro h2, #intro p {
     padding: 0 25px;
 }
-
 
 
 
@@ -444,10 +441,12 @@ footer a {
         padding: 45px;
     }
 
+
     /* TEXT STYLES */
     #contact h3 {
         padding-left: 45px;
     }
+
 
     /* HEADER */
     header {
@@ -548,10 +547,6 @@ footer a {
         height: 100%;
     }
 
-    /* #plan section a {
-
-    } */
-
 
     /* TESTIMONIALS */
     #testimonials div {
@@ -563,12 +558,10 @@ footer a {
     }
 
 
-
     /* ABOUT */
     #about div {
         grid-template-columns: repeat(4, 1fr);
     }
-
 
 
     /* CONTACT */
@@ -634,6 +627,7 @@ footer a {
         font-size: 0.8rem;
     }
 
+
     /* INTRO */
     #intro {
         display: grid;
@@ -651,6 +645,7 @@ footer a {
         grid-row: 1 / span 2;
     }
 
+    
     /* PLAN */
     #plan div {
         display: flex;
@@ -687,6 +682,7 @@ footer a {
         width: 50%;
     }
 
+
     /* CONTACT */
     form {
         display: grid;
@@ -707,6 +703,7 @@ footer a {
     #mySubmit {
         margin-top: 30px;
     }
+
 
     /* FOOTER */
     footer {
