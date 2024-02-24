@@ -65,6 +65,7 @@ table {
 }
 
 
+/* --- TEXT STYLES --- */
 h1, h2, h3 {
     font-family: 'Molle', cursive;
 }
@@ -73,12 +74,19 @@ h4, p, q, small, nav, button, form, a, .form-required, input, select {
     font-family: 'Montserrat', sans-serif;
 } /* added hyperlink, form-required, input, select */
 
+h1 {
+    font-size: 2.4rem;
+}
 
-/* --- TEXT STYLES --- */
-h3 {
+h2, h3 {
     font-size: 2rem;
 }
-h4 {
+
+#contact h3 {
+    padding-left: 25px;
+}
+
+nav ul, h4 {
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -95,8 +103,24 @@ q, .form-required {
     font-style: italic;
 }
 
+.form-required {
+    font-size: 1rem;
+}
+
+.sr-only {
+    visibility: hidden;
+}
 
 
+html {
+    min-width: 320px;
+}
+
+body {
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.2;
+}
 
 #skip {
     position: absolute;
@@ -105,16 +129,7 @@ q, .form-required {
     overflow: hidden;
 }
 
-body {
-    margin: 0 auto;
-    min-width: 320px;
-    font-size: 1rem;
-}
 
-
-header {
-    background: linear-gradient(to bottom, var(--teal), var(--white));
-}
 
 /* --- LINK STYLES --- */
 a {
@@ -124,11 +139,106 @@ a {
 
 
 
+/* --- HEADER --- */
+header {
+    background: linear-gradient(to bottom, var(--teal), var(--white));
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 40%;
+    padding-top: 10px;
+}
+
+header h1, p {
+    padding: 5px 25px;
+}
+
+
+
+/* --- NAVIGATION --- */
+nav {
+    position: absolute;
+    width: 100%;
+}
+
+nav label {
+    /* display: flex; */
+    background-color: var(--yellow);
+    padding: 10px 25px;
+    text-align: center;
+    position: absolute;
+    width: 30%;
+    right: 0%;
+    top: 40%;
+}
+
+nav ul {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0%;
+}
+
+nav li {
+    background-color: var(--teal);
+    text-align: center;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--black);
+}
+nav li:hover {
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+#menu-toggle {
+    width: 100%;
+    align-content: center;
+}
+
+#menu-toggle label:hover {
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+}
+
+#toggle {
+    position: absolute;
+    opacity: 0%;
+}
+
+
+#menu-toggle input:checked + label {
+    align-items: center;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    top: 0%;
+    width: 100%;
+}
+#menu-toggle input:checked ~ ul {
+    z-index: 1;
+    top: 100%;
+}
+
+
+
+
 /* --- INTRO --- */
 #intro img {
     width: 100%;
     padding-top: 12px;
 }
+
+#intro h2, #intro p {
+    padding: 0 25px;
+}
+
+
 
 
 /* --- PLAN YOUR TRIP --- */
@@ -151,14 +261,13 @@ a {
     border-style: solid;
     border-width: 3px;
     border-color: var(--white);
-    border-radius: 5%;
-
+    border-radius: 9px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 250px;
     padding: 12px;
     gap: 10px;
 }
@@ -233,15 +342,15 @@ a {
 }
 
 form {
-    margin: 0 25px;
+    margin: 10px 25px;
 }
 
 .required {
     color: var(--purple);
 }
 
-fieldset{
-    display: grid;
+input {
+    color: var(--black);
 }
 
 label, legend {
@@ -249,17 +358,59 @@ label, legend {
     font-weight: bold;
 }
 
-input {
-    color: var(--black);
+fieldset {
+    display: grid;
 }
 
 input[type=text], input[type=email], input[type=tel], select {
-    box-sizing: border-box;
     width: 100%;
     margin: 5px 0 20px 0;
     padding: 12px 6px;
+    box-sizing: border-box;
 }
 
+fieldset label {
+    text-transform: none;
+    padding: 10px 0;
+}
+
+.radio-label {
+    position: relative;
+    bottom: 8px;
+}
+
+
+.required {
+    color: var(--purple);
+}
+
+input, select {
+    margin-bottom: 15px;
+    border: 3px solid var(--purple);
+}
+
+input[type=radio] {
+    margin: 3px;
+    height: 30px;
+    width: 30px;
+    accent-color: var(--purple);
+}
+input[type=radio]:hover, select:hover {
+    cursor: pointer;
+}
+#mySubmit {
+    background-color: var(--purple);
+    color: var(--white);
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+#mySubmit:hover {
+    cursor: pointer;
+}
 
 
 
@@ -272,16 +423,14 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
 footer p {
     padding-bottom: 10px;
 }
+
 footer a {
     padding-top: 20px;
 }
-
-
-
-
 
 
 
@@ -291,10 +440,280 @@ footer a {
 /* MEDIUM */
 @media screen and (min-width: 768px) {
     
+    #plan, #testimonials, #about {
+        padding: 45px;
+    }
+
+    /* TEXT STYLES */
+    #contact h3 {
+        padding-left: 45px;
+    }
+
+    /* HEADER */
+    header {
+        display: grid;
+		grid-template-columns: 1fr 5fr;
+        padding: 25px 45px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    #logo {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    header img {
+        width: 120%;
+    }
+
+    nav {
+        position: static;
+        width: 100%;
+        grid-column-start: span 2;
+    }
+    
+    nav label {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        right: auto;
+        justify-content: space-around;
+        text-align: center;
+        gap: 15px;
+    }
+
+    nav li {
+        background-color: var(--white);
+        border: none;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    nav li:hover {
+        background-color: var(--yellow);
+    }
+
+    nav a {
+        color: var(--black);
+    }
+
+
+    /* INTRO */
+    #intro {
+        padding: 10px 45px;
+    }
+
+    #intro h2, #intro p {
+        padding: 0 0 15px 0;
+    }
+
+    #img-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    #img-grid img {
+        padding: 0;
+    }
+
+    #img-grid picture {
+        grid-column-start: span 2;
+    }
+
+
+    /* PLAN */
+    #plan div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 20px;
+        padding: 0;
+        margin: 15px;
+    }
+    
+    #plan section {
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 0;
+        width: 80%;
+        height: 100%;
+    }
+
+    /* #plan section a {
+
+    } */
+
+
+    /* TESTIMONIALS */
+    #testimonials div {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #testimonials section {
+        padding: 20px;
+    }
+
+
+
+    /* ABOUT */
+    #about div {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+
+    /* CONTACT */
+    form {
+        margin: 0 45px;
+        
+    }
+
+    fieldset {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .radio-label {
+        bottom: 20px;
+    }
+    
+    input[type=radio] {
+        height: 50px;
+        width: 50px;
+    }
+
+    #mySubmit {
+        width: 50%;
+        margin-left: 50%;
+    }
+
+
+    /* FOOTER */
+    footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 25px 15px;
+    }
+
+    footer p, footer a {
+        padding: 0;
+    }
+
 }
 
 
 /* LARGE */
-@media screen and (min-width: ) {
+@media screen and (min-width: 1000px) {
     
+    /* HEADER */
+    header {
+        grid-template-columns: 1fr 2fr 1fr 4fr;
+    }
+
+    header p {
+        grid-column: 2 / span 2;
+    }
+
+    nav {
+        position: absolute;
+        top: -4%;
+        right: 0%;
+        width: 50%;
+    }
+
+    nav li a {
+        font-size: 0.8rem;
+    }
+
+    /* INTRO */
+    #intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 6fr;
+        column-gap: 15px;
+    }
+
+    #intro h2 {
+        padding: 0;
+    }
+
+    #img-grid {
+        grid-column: 2 / 3;
+        grid-row: 1 / span 2;
+    }
+
+    /* PLAN */
+    #plan div {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+
+    #plan section {
+        padding: 10px;
+    }
+
+    #plan section h4 {
+        font-size: 1rem;
+    }
+
+    #plan img {
+        width: 70%;
+    }
+
+    
+    /* TESTIMONIALS */
+    #testimonials div {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    #testimonials section {
+        padding: 0;
+        gap: 0;
+        justify-content: flex-start;
+    }
+
+    #testimonials img {
+        width: 50%;
+    }
+
+    /* CONTACT */
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    input[type=radio] {
+        width: 30px;
+        height: 30px;
+    }
+
+    .radio-label {
+        bottom: 11px;
+    }
+
+    #mySubmit {
+        margin-top: 30px;
+    }
+
+    /* FOOTER */
+    footer {
+        gap: 15px;
+    }
+
+    footer p {
+        padding-right: 230px;
+    }
 }
