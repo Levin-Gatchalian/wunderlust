@@ -51,3 +51,250 @@ table {
 
 
 /* ------ GLOBAL STYLES ------ */
+@import url('https://fonts.google.com/share?selection.family=Molle:ital@1%7CMontserrat');
+
+:root {
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Molle', cursive;
+}
+
+h4, p, q, small, nav, button, form, a, .form-required, input, select { 
+    font-family: 'Montserrat', sans-serif;
+} /* added hyperlink, form-required, input, select */
+
+
+/* --- TEXT STYLES --- */
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#testimonials h4 {
+    font-size: 1.3rem;
+}
+
+#intro p, footer a, footer p {
+    font-size: 0.9rem;
+}
+
+q, .form-required {
+    font-style: italic;
+}
+
+
+
+
+#skip {
+    position: absolute;
+    top: auto;
+    left: -200px;
+    overflow: hidden;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 320px;
+    font-size: 1rem;
+}
+
+
+header {
+    background: linear-gradient(to bottom, var(--teal), var(--white));
+}
+
+/* --- LINK STYLES --- */
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+
+
+/* --- INTRO --- */
+#intro img {
+    width: 100%;
+    padding-top: 12px;
+}
+
+
+/* --- PLAN YOUR TRIP --- */
+#plan {
+    background: var(--yellow);
+    padding: 25px;
+}
+
+#plan div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+}
+
+#plan section {
+    background-color: var(--teal);
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--white);
+    border-radius: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 12px;
+    gap: 10px;
+}
+
+#plan img {
+    height: 150px;
+}
+
+#plan h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+
+/* --- TESTIMONIALS --- */
+#testimonials {
+    padding: 25px;
+}
+
+#testimonials div {
+    display: grid;
+    padding: 10px 0;
+    gap: 20px;
+}
+
+#testimonials section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+
+
+/* --- ABOUT YOUR DESTINATION --- */
+#about {
+    background-color: var(--blue);
+    padding: 25px;
+}
+
+#about div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 25px;
+}
+
+#about section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#about img {
+    width: auto;
+    height: 5em;
+}
+
+#about h4, #about p {
+    padding-top: 5px;
+}
+
+
+
+/* --- CONTACT --- */
+#contact {
+    width: 100%;
+    padding: 25px 0;
+}
+
+form {
+    margin: 0 25px;
+}
+
+.required {
+    color: var(--purple);
+}
+
+fieldset{
+    display: grid;
+}
+
+label, legend {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+input {
+    color: var(--black);
+}
+
+input[type=text], input[type=email], input[type=tel], select {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 5px 0 20px 0;
+    padding: 12px 6px;
+}
+
+
+
+
+/* --- FOOTER --- */
+footer {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: var(--light-gray);
+    text-align: center;
+    padding: 20px;
+}
+footer p {
+    padding-bottom: 10px;
+}
+footer a {
+    padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+/* ------ MEDIA QUERIES ------ */
+
+/* MEDIUM */
+@media screen and (min-width: 768px) {
+    
+}
+
+
+/* LARGE */
+@media screen and (min-width: ) {
+    
+}
